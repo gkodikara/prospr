@@ -6,11 +6,11 @@
 					{{>jobExpiredAlert}}
 					{{#if isInRole 'admin'}}
 					    {{>jobAdminEditLink}}
-					    {{>jobStatusToggle}}  
+					    {{>jobStatusToggle}}
 					    {{>jobSuggestedTweet}}
 					{{/if}}
 					{{>jobStatusAlert}}
-					{{>jobFeatured}}
+					<!-- {{>jobFeatured}} -->
 					<div class="row">
 						<div class="col-sm-12">
 							<h2>
@@ -31,7 +31,7 @@
 						</div>
 						<div class="col-sm-6 job-url">
 							{{#if url}}
-								<i class="fa fa-external-link fa-m"></i>&nbsp;&nbsp;<a href="{{url}}" target="_blank">{{cutString url 50}}</a>
+								<i class="fa fa-external-link fa-m"></i>&nbsp;&nbsp;<a href="{{url}}" target="_blank">Apply Now</a>
 							{{/if}}
 						</div>
 					</div>
@@ -43,7 +43,7 @@
 								<hr>
 							{{/if}}
 							{{#if contact}}
-								<i class="fa fa-envelope fa-fw"></i> {{contact}}
+								<i class="fa fa-envelope fa-fw"></i> <a href="mailto:{{contactemail}}?subject=Application for: '{{title}}'">{{contact}}</a>
 								<hr>
 							{{/if}}
 							<i class="fa fa-calendar fa-fw"></i> Posted on {{formatDate createdAt}}

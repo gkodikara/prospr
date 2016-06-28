@@ -33,8 +33,11 @@
 <template name="jobSuggestedTweet">
     <div class="row">
         <div class="col-sm-12">
+            Suggested Tweet:
+        </div>
+        <div class="col-sm-12">
             {{title}} -
-            {{#if remote}}#Remote {{jobtype}}{{else}}{{jobtype}} in {{location}}{{/if}} {{urlFor 'job'}} #meteorjob #meteorjs
+            {{#if remote}}#Remote {{jobtype}}{{else}}{{jobtype}} in {{location}}{{/if}} {{urlFor 'job'}}
             <hr>
         </div>
     </div>

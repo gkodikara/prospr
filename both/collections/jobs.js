@@ -29,7 +29,15 @@ Jobs.attachSchema(
     contact: {
       type: String,
       label: "Contact Info",
-      max: 128
+      max: 128,
+      optional: true
+    },
+    contactemail: {
+      type: String,
+      label: "Contact Email",
+      max: 128,
+      optional: true,
+      regEx: SimpleSchema.RegEx.Email
     },
     jobtype: {
       type: String,
@@ -164,11 +172,11 @@ Jobs.allow({
     return userId && doc && userId === doc.userId;
   },
   update: function(userId, doc, fieldNames, modifier) {
-    return Roles.userIsInRole(userId, ['admin']) || 
-    (!_.contains(fieldNames, 'htmlDescription') 
-      && !_.contains(fieldNames, 'status') 
-        && !_.contains(fieldNames, 'featuredThrough') 
-          && !_.contains(fieldNames, 'featuredChargeHistory') 
+    return Roles.userIsInRole(userId, ['admin']) ||
+    (!_.contains(fieldNames, 'htmlDescription')
+      && !_.contains(fieldNames, 'status')
+        && !_.contains(fieldNames, 'featuredThrough')
+          && !_.contains(fieldNames, 'featuredChargeHistory')
           && /*doc.status === "pending" &&*/ userId && doc && userId === doc.userId);
   },
   remove: function(userId, doc) {

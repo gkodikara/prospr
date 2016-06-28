@@ -2,10 +2,13 @@
     <div class="jobSmall {{#if featured}}featured{{/if}} panel panel-default">
         <div class="panel-body">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-1">
+                    <div class="company-logo"></div>
+                </div>
+                <div class="col-sm-7">
                     <h4>
-				<a href="{{pathFor 'job'}}">{{title}}</a>
-			</h4>
+	                    <a href="{{pathFor 'job'}}">{{title}}</a>
+                    </h4>
                 </div>
                 <div class="col-sm-4 text-right">
                     {{>jobLabels}}
@@ -13,11 +16,11 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                     
+
                     <i class="fa fa-calendar"></i> {{formatDate createdAt}}
                     {{!-- {{#if featured}} - Featured Until {{formatDate featuredThrough}}{{/if}}
                      --}}
-                    
+
                 </div>
                 <div class="col-sm-9 text-right">
                     {{#if company}}<i class="fa fa-building"></i> {{company}}{{/if}}
